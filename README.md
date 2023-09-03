@@ -59,6 +59,13 @@ To smooth the animation, set the degree to which you want it smoothed in the "Sm
 
 The "Select System" button, selects the rig and the drivers, so that you can move the rig around the scene without your motion being changed.
 
+# TroubleShooting
+
+If you are getting an error when adding a rig, try first enabling the "Rigify" addon.
+
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/749dbf6a-9db2-44e8-8503-23d18329d34a)
+
+
 
 
 
