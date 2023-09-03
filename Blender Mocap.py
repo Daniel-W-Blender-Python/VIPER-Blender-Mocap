@@ -1,4 +1,3 @@
-
 bl_info = {
     "name": "Blender Mocap",
     "author": "Daniel W",
@@ -361,21 +360,6 @@ def draw_file_opener(self, context):
     row = col.row(align=True)
     row.prop(scn.settings, 'file_path', text='directory:')
     row.operator("something.identifier_selector", icon="FILE_FOLDER", text="")
-
-
-class RunFileSelector(bpy.types.Operator, ExportHelper):
-    """Import Video"""
-    bl_idname = "something.identifier_selector"
-    bl_label = "some folder"
-    filename_ext = ""
-
-    def execute(self, context):
-        fdir = self.properties.filepath
-        context.scene.settings.file_path = fdir
-        print("Using file: ", context.scene.settings.file_path)
-        if context.scene.settings.body_tracking: run_body(context.scene.settings.file_path)
-        else: run_full(context.scene.settings.file_path)
-        return{'FINISHED'}
     
     
 
@@ -390,6 +374,8 @@ class Settings(PropertyGroup):
                             default = 0.1)
 
     file_path = bpy.props.StringProperty()
+    
+    file_name : bpy.props.StringProperty(name = "File Path:")
     
 
     # Capture only body pose if True, otherwise capture hands, face and body
@@ -479,6 +465,8 @@ class BlenderMocapPanel(bpy.types.Panel):
 
         row = layout.row()
         row.operator(RunOperator.bl_idname, text="Capture Motion")
+        
+        layout.prop(mytool, "file_name")
 
         row = layout.row()
         row.operator(RunFileSelector.bl_idname, text="Import Video")
@@ -503,6 +491,11 @@ class BlenderMocapPanel(bpy.types.Panel):
         row = layout.row()
         row.operator(Smooth_animation.bl_idname, text = "Smooth Animation")
         
+        row = layout.row()
+        row.label(text="Save Animation to Armature")
+        
+        row = layout.row()
+        row.operator(Save_Animation.bl_idname, text = "Save Animation")
 
         row = layout.row()
         label = "Body" if settings.body_tracking else "Body, Hands and Face"
@@ -510,7 +503,24 @@ class BlenderMocapPanel(bpy.types.Panel):
         
         context = bpy.context     
         scene = context.scene
-        mytool = scene.settings 
+        mytool = scene.settings
+        
+        
+        
+        
+class RunFileSelector(bpy.types.Operator):
+    """Import Video"""
+    bl_idname = "something.identifier_selector"
+    bl_label = "some folder"
+    filename_ext = ""
+
+    def execute(self, context):
+        context = bpy.context     
+        scene = context.scene
+        mytool = scene.settings
+        
+        run_body(mytool.file_name)
+        return{'FINISHED'} 
         
      
 def smooth_animation(armature):
@@ -545,6 +555,27 @@ def smooth_animation(armature):
         #fcurves = bpy.context.active_object.animation_data.action.fcurves
         #for curve in fcurves:
             #bpy.ops.graph.gaussian_smooth(factor=((mytool.scale_val)/10))
+            
+            
+            
+def save_animation(armature):
+    
+    context = bpy.context
+    scene = context.scene
+    mytool = scene.settings
+    
+    armature = bpy.data.objects[mytool.eyedropper]
+    
+    armature.select_set(True)
+    
+    bpy.context.view_layer.objects.active = armature
+    bpy.ops.object.mode_set(mode='POSE')
+    bpy.ops.pose.select_all(action='SELECT')
+    bpy.ops.nla.bake(frame_start=bpy.data.scenes[0].frame_start, frame_end=bpy.data.scenes[0].frame_end, bake_types={'POSE'})
+    bpy.ops.object.mode_set(mode='OBJECT')
+    
+    armature.select_set(False)
+
 
         
         
@@ -644,6 +675,18 @@ class Smooth_animation(bpy.types.Operator):
         mytool = scene.settings
         smooth_animation(mytool.eyedropper)
         return {'FINISHED'}
+    
+    
+class Save_Animation(bpy.types.Operator):
+    """Save Animation"""
+    bl_idname = "object.save_animation"
+    bl_label = "Save Animation"
+    
+    def execute(self, context):
+        scene = context.scene
+        mytool = scene.settings
+        save_animation(mytool.eyedropper)
+        return {'FINISHED'}
 
 
 _classes = [
@@ -654,6 +697,7 @@ _classes = [
     TransferAnimation,
     SelectSystem,
     Smooth_animation,
+    Save_Animation,
     Settings,
     MessageBox
 ]
