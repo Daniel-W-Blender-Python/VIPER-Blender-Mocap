@@ -15,6 +15,17 @@ from bpy.utils import register_class, unregister_class
 from bpy_extras.io_utils import ImportHelper
 import bpy_extras
 
+def install():
+    """ Install MediaPipe and dependencies """
+    import subprocess
+    import sys
+    subprocess.check_call([sys.executable, "-m", "ensurepip"])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "pip"])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "mediapipe"])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python"])
+    
+install()
+
 
 body_names = [
 "00 nose",
@@ -52,15 +63,6 @@ body_names = [
 "32 right foot index",
 ]
 
-
-
-def install():
-    """ Install MediaPipe and dependencies """
-    import subprocess
-    import sys
-    subprocess.check_call([sys.executable, "-m", "ensurepip"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "pip"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "mediapipe"])
 
 
 def body_setup():
@@ -169,7 +171,7 @@ def run_body(file_path):
     except Exception as e:
         # bpy.ops.message.messagebox('INVOKE_DEFAULT', 'Installing additional libraries, this may take a moment...')
         bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
-        install()
+        #install()
         import cv2
         import mediapipe as mp
 
