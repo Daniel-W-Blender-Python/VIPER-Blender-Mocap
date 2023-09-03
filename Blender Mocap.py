@@ -12,7 +12,8 @@ bl_info = {
 import bpy
 from bpy.types import Panel, Operator, PropertyGroup, FloatProperty, PointerProperty, StringProperty
 from bpy.utils import register_class, unregister_class
-from bpy_extras.io_utils import ExportHelper
+from bpy_extras.io_utils import ImportHelper
+import bpy_extras
 
 
 body_names = [
@@ -396,6 +397,19 @@ class RunOperator(bpy.types.Operator):
         return {'FINISHED'}
     
     
+class RunFileSelector(bpy.types.Operator, ImportHelper):
+    """Import Video"""
+    bl_idname = "something.identifier_selector"
+    bl_label = "some folder"
+    filename_ext = ""
+
+    def execute(self, context):
+        file_name = self.properties.filepath
+        run_body(file_name)
+        return{'FINISHED'} 
+    
+    
+    
 class AddArmature(bpy.types.Operator):
     """Add Rig"""
     bl_idname = "object.add_rig"
@@ -440,12 +454,12 @@ class MessageBox(bpy.types.Operator):
 
 
 class BlenderMocapPanel(bpy.types.Panel):
-    bl_label = "Blender Mocap"
-    bl_category = "Blender Mocap"
-    bl_idname = "Blender Mocap"
+    bl_label = "Blender Mocap 2"
+    bl_category = "Blender Mocap 2"
+    bl_idname = "Blender Mocap 2"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_label = "Blender Mocap"
+    bl_label = "Blender Mocap 2"
 
     def draw(self, context):
         layout = self.layout
@@ -466,8 +480,6 @@ class BlenderMocapPanel(bpy.types.Panel):
         row = layout.row()
         row.operator(RunOperator.bl_idname, text="Capture Motion")
         
-        layout.prop(mytool, "file_name")
-
         row = layout.row()
         row.operator(RunFileSelector.bl_idname, text="Import Video")
         
@@ -507,20 +519,7 @@ class BlenderMocapPanel(bpy.types.Panel):
         
         
         
-        
-class RunFileSelector(bpy.types.Operator):
-    """Import Video"""
-    bl_idname = "something.identifier_selector"
-    bl_label = "some folder"
-    filename_ext = ""
 
-    def execute(self, context):
-        context = bpy.context     
-        scene = context.scene
-        mytool = scene.settings
-        
-        run_body(mytool.file_name)
-        return{'FINISHED'} 
         
      
 def smooth_animation(armature):
@@ -564,14 +563,16 @@ def save_animation(armature):
     scene = context.scene
     mytool = scene.settings
     
-    armature = bpy.data.objects[mytool.eyedropper]
+    armature = scene.objects.get(mytool.eyedropper)
+    object_armature = mytool.eyedropper
     
     armature.select_set(True)
     
     bpy.context.view_layer.objects.active = armature
+    
     bpy.ops.object.mode_set(mode='POSE')
     bpy.ops.pose.select_all(action='SELECT')
-    bpy.ops.nla.bake(frame_start=bpy.data.scenes[0].frame_start, frame_end=bpy.data.scenes[0].frame_end, bake_types={'POSE'})
+    bpy.ops.nla.bake(frame_start=bpy.data.scenes[0].frame_start, frame_end=bpy.data.scenes[0].frame_end, visual_keying=True, bake_types={'POSE'})
     bpy.ops.object.mode_set(mode='OBJECT')
     
     armature.select_set(False)
