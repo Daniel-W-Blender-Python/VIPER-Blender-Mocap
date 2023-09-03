@@ -171,7 +171,7 @@ def run_body(file_path):
     except Exception as e:
         # bpy.ops.message.messagebox('INVOKE_DEFAULT', 'Installing additional libraries, this may take a moment...')
         bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
-        #install()
+        install()
         import cv2
         import mediapipe as mp
 
