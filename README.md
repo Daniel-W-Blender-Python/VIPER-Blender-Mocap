@@ -57,6 +57,8 @@ Then, you can either capture motion from a webcam, or you could import a file. T
 
 To smooth the animation, set the degree to which you want it smoothed in the "Smooth Value" box, then click the "Smooth Animation" button. To save the animation to your rig, click "Save Animation". This ensures that if you want to track motion for a different character in your scene, the motion you tracked for your original character will stay with that rig.
 
+The "Select System" button, selects the rig and the drivers, so that you can move the rig around the scene without your motion being changed.
+
 
 
 
