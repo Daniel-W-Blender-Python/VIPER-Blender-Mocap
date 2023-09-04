@@ -68,10 +68,15 @@ If you are getting an error when adding a rig, try first enabling the "Rigify" a
 If you are getting an error stating that there is no module named cv2, or that there is no module named mediapipe, try opening the scripting tab in blender, adding a new python script, and running this code:
 
 import subprocess
+
 import sys
+
 subprocess.check_call([sys.executable, "-m", "ensurepip"])
+
 subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "pip"])
+
 subprocess.check_call([sys.executable, "-m", "pip", "install", "mediapipe"])
+
 subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python"])
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/2fbd2085-5228-4b7f-824b-3b57346ffeb4)
