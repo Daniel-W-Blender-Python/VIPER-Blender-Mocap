@@ -85,7 +85,7 @@ This will download the OpenCV and Mediapipe libraries, which are required to run
 
 If you have getting an error when clicking "Smooth Animation", make sure that the drivers aren't hidden in the scene.
 
-If you are getting an error when clicking "Save Animation", or the button simply doesn't work, try showing all the layers of the rig:
+If you are getting an error when clicking "Save Animation", or the button simply doesn't work, try showing all the layers of the rig. Then try saving the animation.
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/641b108a-2a4e-46a5-b95c-22ee053fee17)
 
