@@ -83,6 +83,13 @@ subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python"])
 
 This will download the OpenCV and Mediapipe libraries, which are required to run this addon.
 
+If you have getting an error when clicking "Smooth Animation", make sure that the drivers aren't hidden in the scene.
+
+If you are getting an error when clicking "Save Animation", or the button simply doesn't work, try showing all the layers of the rig:
+
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/641b108a-2a4e-46a5-b95c-22ee053fee17)
+
+
 
 
 
