@@ -89,6 +89,11 @@ If you are getting an error when clicking "Save Animation", or the button simply
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/641b108a-2a4e-46a5-b95c-22ee053fee17)
 
+If the "Smooth Animation" button still doesn't work, try selecting all of the drivers, and then clicking the button:
+
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/9774681f-dcc7-41b3-b4a1-7871e22a93f6)
+
+
 
 
 
