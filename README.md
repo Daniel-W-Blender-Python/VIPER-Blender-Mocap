@@ -19,7 +19,7 @@ In future versions, this addon will hopefully run more on deep learning algorith
 
 # How To Install:
 
-First, download the zip file from github, and then extract the python script titled "Blender Mocap" from the folder. Then, open Blender.
+First, download the zip file from github, and then extract the python script titled "Blender Mocap (Newest Version)" from the folder. Then, open Blender.
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/402f7c6c-0338-415b-ad79-09208cda66fa)
 
@@ -58,6 +58,22 @@ Then, you can either capture motion from a webcam, or you could import a file. T
 To smooth the animation, set the degree to which you want it smoothed in the "Smooth Value" box, then click the "Smooth Animation" button. To save the animation to your rig, click "Save Animation". This ensures that if you want to track motion for a different character in your scene, the motion you tracked for your original character will stay with that rig.
 
 The "Select System" button, selects the rig and the drivers, so that you can move the rig around the scene without your motion being changed.
+
+In Version 3, there is a new Rokoko Retargeting feature. Rokoko is a popular free motion capture resource, but it uses a different rig than the standard one from Rigify. In the addon, you would first import the Rokoko rig (with animation) as an FBX, making sure to click "Automatic Bone Orientation" before importing:
+
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/2e576c2b-e1bf-4bd5-a919-637ba0cbbc0f)
+
+This orients the bones in the standard format, rather than rotating them all vertically in the 3d space. Then, select "Root" as the object under "Source" in the addon. After that, select the Rigify rig you are using as the object under "Target".
+
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/5c8463e5-6b90-4d07-bbc0-8e0d4a338234)
+
+Then, to link the rig to the Rokoko armature's motion, click "Link Armatures". This will add bone constraints to the bones on the rig, so that whatever you change to the Rokoko armature in terms of motion, it will be mimicked by the rig.
+
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/5ed246d7-d4bb-4caa-bd00-b7e232218c37)
+
+If you want to transfer the Rokoko armature's motion to the rig, click the "Retarget Animation" button.
+
+
 
 # TroubleShooting
 
