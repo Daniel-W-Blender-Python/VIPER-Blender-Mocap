@@ -841,22 +841,22 @@ class BlenderMocapPanel(bpy.types.Panel):
         row.label(text="Run Motion Capture")
 
         row = layout.row()
-        row.operator(RunOperator.bl_idname, text="Capture Motion")
+        row.operator(RunOperator.bl_idname, text="Capture Motion", icon="CAMERA_DATA")
         
         row = layout.row()
-        row.operator(RunOperator_Face.bl_idname, text="Capture Face Motion")
+        row.operator(RunOperator_Face.bl_idname, text="Capture Face Motion", icon="CAMERA_DATA")
         
         row = layout.row()
-        row.operator(RunFileSelector.bl_idname, text="Import Video")
+        row.operator(RunFileSelector.bl_idname, text="Import Video", icon="SEQUENCE")
         
         row = layout.row()
-        row.operator(RunFileSelector_Face.bl_idname, text="Import Video (Face)")
+        row.operator(RunFileSelector_Face.bl_idname, text="Import Video (Face)", icon="SEQUENCE")
         
         row = layout.row()
-        row.operator(AddArmature.bl_idname, text="Add Rig")
+        row.operator(AddArmature.bl_idname, text="Add Rig", icon="OUTLINER_OB_ARMATURE")
         
         row = layout.row()
-        row.operator(TransferAnimation.bl_idname, text="Transfer Animation")
+        row.operator(TransferAnimation.bl_idname, text="Transfer Animation", icon="FILE_TICK")
 
         row = layout.row()
         row.label(text="(Press (esc) to stop)")
@@ -865,18 +865,18 @@ class BlenderMocapPanel(bpy.types.Panel):
         row.label(text="Select the rig and drivers")
 
         row = layout.row()
-        row.operator(SelectSystem.bl_idname, text="Select System")
+        row.operator(SelectSystem.bl_idname, text="Select System", icon="RESTRICT_SELECT_OFF")
         
         layout.prop(mytool, "smooth_val")
         
         row = layout.row()
-        row.operator(Smooth_animation.bl_idname, text = "Smooth Animation")
+        row.operator(Smooth_animation.bl_idname, text = "Smooth Animation", icon="IPO_BEZIER")
         
         row = layout.row()
         row.label(text="Save Animation to Armature")
         
         row = layout.row()
-        row.operator(Save_Animation.bl_idname, text = "Save Animation")
+        row.operator(Save_Animation.bl_idname, text = "Save Animation", icon="DECORATE_DRIVER")
         
         row = layout.row()
         row.label(text="Retarget Animation from Rokoko")
@@ -886,10 +886,10 @@ class BlenderMocapPanel(bpy.types.Panel):
         layout.prop_search(mytool, "target", context.scene, "objects")
         
         row = layout.row()
-        row.operator(Link.bl_idname, text = "Link Armatures")
+        row.operator(Link.bl_idname, text = "Link Armatures", icon="DECORATE_LINKED")
         
         row = layout.row()
-        row.operator(Retarget.bl_idname, text = "Retarget Animation")
+        row.operator(Retarget.bl_idname, text = "Retarget Animation", icon="INDIRECT_ONLY_OFF")
 
         row = layout.row()
         label = "Body" if settings.body_tracking else "Body, Hands and Face"
