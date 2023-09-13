@@ -1,14 +1,7 @@
 # Blender-Motion-Capture-Addon
 A Blender Addon that uses Mediapipe in Blender to capture a person's movements, and apply them to a character in real time.
 
-<div style="position:relative;width:fit-content;height:fit-content;">
-            <a style="position:absolute;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/GnduY6PYGwX?utm_source=embed&utm_medium=embed&utm_campaign=watch">
-                <img loading="lazy" style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp" />
-            </a>
-            <iframe allow="autoplay;" allowfullscreen style="border:none" src="https://clipchamp.com/watch/GnduY6PYGwX/embed" width="640" height="360"></iframe>
-        </div>
-
-        
+https://clipchamp.com/watch/GnduY6PYGwX/embed
 
 The initial code was taken from the "BlendyPose" python script by ZonkSoft, and adapted to apply the motion onto a character in Blender. Mediapipe is a pose-estimation library authored by Google, that estimates the pose of a person in an image (using open-cv in Python), and predicts the 3d coordinates of each landmark. In Blender, the addon applies the location of each landmark onto plain axes in the 3d space, and adds bone constraints to some of the bones in the Blender Rigify Addon (only with the rig, not the armature), so that the bone follows the axes in the space.
 
