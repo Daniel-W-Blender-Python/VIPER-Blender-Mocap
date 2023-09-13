@@ -1,6 +1,13 @@
 # Blender-Motion-Capture-Addon
 A Blender Addon that uses Mediapipe in Blender to capture a person's movements, and apply them to a character in real time.
 
+<div style="position:relative;width:fit-content;height:fit-content;">
+            <a style="position:absolute;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/GnduY6PYGwX?utm_source=embed&utm_medium=embed&utm_campaign=watch">
+                <img loading="lazy" style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp" />
+            </a>
+            <iframe allow="autoplay;" allowfullscreen style="border:none" src="https://clipchamp.com/watch/GnduY6PYGwX/embed" width="640" height="360"></iframe>
+        </div>
+
 The initial code was taken from the "BlendyPose" python script by ZonkSoft, and adapted to apply the motion onto a character in Blender. Mediapipe is a pose-estimation library authored by Google, that estimates the pose of a person in an image (using open-cv in Python), and predicts the 3d coordinates of each landmark. In Blender, the addon applies the location of each landmark onto plain axes in the 3d space, and adds bone constraints to some of the bones in the Blender Rigify Addon (only with the rig, not the armature), so that the bone follows the axes in the space.
 
 The drivers (plain axes) are the objects that move the bones, meaning that the keyframes are not actually applied to the rig. This is important to know when using this addon for more advanced scenes in Blender. In order to move the rig around after the drivers are connected (after "Transfer Animation" is clicked), the "Select System" button must be pressed, so that the drivers move with the rig, and the motion is properly conserved. However, if you are going to re-capture the motion after moving the rig to a different location/rotation, this button does not need to be pressed.
