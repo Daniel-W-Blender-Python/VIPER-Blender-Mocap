@@ -101,7 +101,7 @@ This will download the OpenCV and Mediapipe libraries, which are required to run
 
 If your computer is crashing while checking the addon box, try importing and running both scripts (Blender Mocap V (Latest Version) and the code above), then checking the box:
 
-<img src="blob:chrome-untrusted://media-app/c401ec2a-91dd-49e5-a6db-2c240c46ffe4" alt="Screenshot 2023-09-12 8.43.01 PM.png"/>![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/664018bc-86be-46b1-9c04-b13cece1b2df)
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/664018bc-86be-46b1-9c04-b13cece1b2df)
 
 If you have getting an error when clicking "Smooth Animation", make sure that the drivers aren't hidden in the scene.
 
