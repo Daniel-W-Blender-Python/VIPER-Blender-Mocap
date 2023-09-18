@@ -909,6 +909,56 @@ def link_rok(source, target):
     source = scene.objects.get(mytool.source)
     target = scene.objects.get(mytool.target)
     
+    bpy.ops.object.empty_add(type='PLAIN_AXES', align='WORLD', location=(0, 0, 0), scale=(0.025, 0.025, 0.025))
+    l_empty = bpy.context.active_object
+    l_empty.scale = (0.025, 0.025, 0.025)
+    l_empty.name = "Left Foot Empty"
+    l_con = scene.objects.get("Left Foot Empty")
+    clc = l_con.constraints.new('CHILD_OF')
+    clc.target = source
+    clc.subtarget = "LeftFoot"
+    
+    bpy.ops.object.empty_add(type='PLAIN_AXES', align='WORLD', location=(0, 0, 0), scale=(0.025, 0.025, 0.025))
+    r_empty = bpy.context.active_object
+    r_empty.scale = (0.025, 0.025, 0.025)
+    r_empty.name = "Right Foot Empty"
+    r_con = scene.objects.get("Right Foot Empty")
+    clc = r_con.constraints.new('CHILD_OF')
+    clc.target = source
+    clc.subtarget = "RightFoot"
+    
+    bpy.ops.object.empty_add(type='PLAIN_AXES', align='WORLD', location=(0, 0, 0), scale=(0.025, 0.025, 0.025))
+    lh_empty = bpy.context.active_object
+    lh_empty.scale = (0.025, 0.025, 0.025)
+    lh_empty.name = "Left Hand Empty"
+    lh_con = scene.objects.get("Left Hand Empty")
+    clc = lh_con.constraints.new('CHILD_OF')
+    clc.target = source
+    clc.subtarget = "LeftHand"
+    lh_con.rotation_euler = (0, 1.57, -1.57)
+    
+    bpy.ops.object.empty_add(type='PLAIN_AXES', align='WORLD', location=(0, 0, 0), scale=(0.025, 0.025, 0.025))
+    rh_empty = bpy.context.active_object
+    rh_empty.scale = (0.025, 0.025, 0.025)
+    rh_empty.name = "Right Hand Empty"
+    rh_con = scene.objects.get("Right Hand Empty")
+    clc = rh_con.constraints.new('CHILD_OF')
+    clc.target = source
+    clc.subtarget = "RightHand"
+    rh_con.rotation_euler = (0, -1.57, 1.57)
+    
+    bpy.ops.object.empty_add(type='PLAIN_AXES', align='WORLD', location=(0, 0, 0), scale=(0.025, 0.025, 0.025))
+    head_empty = bpy.context.active_object
+    head_empty.scale = (0.025, 0.025, 0.025)
+    head_empty.name = "Head Empty"
+    head_con = scene.objects.get("Head Empty")
+    clc = head_con.constraints.new('CHILD_OF')
+    clc.target = source
+    clc.subtarget = "Head"
+    head_con.rotation_euler = (1.57, 0, 0)
+
+    
+    
     rig_bones = [
     "head",
     "neck", "tweak_spine.004",
@@ -979,7 +1029,25 @@ def link_rok(source, target):
     crc.subtarget = "LeftShoulder"
     target.pose.bones["shoulder.L"].constraints["Copy Rotation"].use_y = False
     
-
+    l_foot = target.pose.bones.get("foot_ik.L")
+    crc = l_foot.constraints.new("COPY_ROTATION")
+    crc.target = l_con
+    
+    r_foot = target.pose.bones.get("foot_ik.R")
+    crc = r_foot.constraints.new("COPY_ROTATION")
+    crc.target = r_con
+    
+    l_hand = target.pose.bones.get("hand_ik.L")
+    crc = l_hand.constraints.new("COPY_ROTATION")
+    crc.target = lh_con
+    
+    r_hand = target.pose.bones.get("hand_ik.R")
+    crc = r_hand.constraints.new("COPY_ROTATION")
+    crc.target = rh_con
+    
+    head = target.pose.bones.get("head")
+    crc = head.constraints.new("COPY_ROTATION")
+    crc.target = head_con
     
     
 def retarget_rok(source, target):
