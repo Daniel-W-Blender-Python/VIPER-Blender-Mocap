@@ -73,7 +73,7 @@ This orients the bones in the standard format, rather than rotating them all ver
 
 Then, to link the rig to the Rokoko armature's motion, click "Link Armatures". This will add bone constraints to the bones on the rig, so that whatever you change to the Rokoko armature in terms of motion, it will be mimicked by the rig.
 
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/5ed246d7-d4bb-4caa-bd00-b7e232218c37)
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/4cbeb298-193e-4599-a666-65aafa7fea1c)
 
 If you want to transfer the Rokoko armature's motion to the rig, click the "Retarget Animation" button.
 
