@@ -99,11 +99,19 @@ def full_setup():
         object = scene.objects.get("23 left hip")
         clc.target = object
         
-
-        for k in range(470):
+        face_names = [
+        "013Face",
+        "014Face",
+        "078Face",
+        "308Face",
+        "419Face",
+        "196Face"
+        ]
+        
+        for n in range(6):
             bpy.ops.mesh.primitive_cube_add()
             box = bpy.context.active_object
-            box.name = str(k).zfill(3) + "Face"
+            box.name = face_names[n]
             box.scale = (0.002, 0.002, 0.002)
             box.parent = face
             
@@ -419,11 +427,31 @@ def run_full(file_path):
                 bns = [b for b in results.face_landmarks.landmark]
                 scale = 2
                 bones = sorted(face.children, key=lambda b: b.name)
-                for k in range(468):
-                    bones[k].location.y = (bns[k].z)*scale
-                    bones[k].location.x = (0.5-bns[k].x)*scale
-                    bones[k].location.z = (0.5-bns[k].y)*scale
-                    bones[k].keyframe_insert(data_path="location", frame=xl)
+
+                top = scene.objects.get("013Face")
+                bottom = scene.objects.get("014Face")
+                right = scene.objects.get("078Face")
+                left = scene.objects.get("308Face")
+                
+                top.location.y = (bns[13].z)*scale
+                top.location.x = (0.5-bns[13].x)*scale
+                top.location.z = (0.5-bns[13].y)*scale
+                top.keyframe_insert(data_path="location", frame=xl)
+                
+                bottom.location.y = (bns[14].z)*scale
+                bottom.location.x = (0.5-bns[14].x)*scale
+                bottom.location.z = (0.5-bns[14].y)*scale
+                bottom.keyframe_insert(data_path="location", frame=xl)
+                
+                right.location.y = (bns[78].z)*scale
+                right.location.x = (0.5-bns[78].x)*scale
+                right.location.z = (0.5-bns[78].y)*scale
+                right.keyframe_insert(data_path="location", frame=xl)
+                
+                left.location.y = (bns[308].z)*scale
+                left.location.x = (0.5-bns[308].x)*scale
+                left.location.z = (0.5-bns[308].y)*scale
+                left.keyframe_insert(data_path="location", frame=xl)
                     
                 context = bpy.context
                 scene = context.scene
@@ -575,11 +603,32 @@ def run_face(file_path):
                 bns = [b for b in results.face_landmarks.landmark]
                 scale = 2
                 bones = sorted(face.children, key=lambda b: b.name)
-                for k in range(468):
-                    bones[k].location.y = (bns[k].z)*scale
-                    bones[k].location.x = (0.5-bns[k].x)*scale
-                    bones[k].location.z = (0.5-bns[k].y)*scale
-                    bones[k].keyframe_insert(data_path="location", frame=xl)
+                
+                top = scene.objects.get("013Face")
+                bottom = scene.objects.get("014Face")
+                right = scene.objects.get("078Face")
+                left = scene.objects.get("308Face")
+                
+                top.location.y = (bns[13].z)*scale
+                top.location.x = (0.5-bns[13].x)*scale
+                top.location.z = (0.5-bns[13].y)*scale
+                top.keyframe_insert(data_path="location", frame=xl)
+                
+                bottom.location.y = (bns[14].z)*scale
+                bottom.location.x = (0.5-bns[14].x)*scale
+                bottom.location.z = (0.5-bns[14].y)*scale
+                bottom.keyframe_insert(data_path="location", frame=xl)
+                
+                right.location.y = (bns[78].z)*scale
+                right.location.x = (0.5-bns[78].x)*scale
+                right.location.z = (0.5-bns[78].y)*scale
+                right.keyframe_insert(data_path="location", frame=xl)
+                
+                left.location.y = (bns[308].z)*scale
+                left.location.x = (0.5-bns[308].x)*scale
+                left.location.z = (0.5-bns[308].y)*scale
+                left.keyframe_insert(data_path="location", frame=xl)
+                
                     
                 context = bpy.context
                 scene = context.scene
