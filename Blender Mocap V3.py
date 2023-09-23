@@ -15,17 +15,6 @@ from bpy.utils import register_class, unregister_class
 from bpy_extras.io_utils import ImportHelper
 import bpy_extras
 
-def install():
-    """ Install MediaPipe and dependencies """
-    import subprocess
-    import sys
-    subprocess.check_call([sys.executable, "-m", "ensurepip"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "pip"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "mediapipe"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python"])
-    
-install()
-
 
 body_names = [
 "00 nose",
@@ -272,6 +261,10 @@ def run_full(file_path):
                 shoulder_2 = bpy.context.scene.objects["11 left shoulder"]
                 foot_r = bpy.context.scene.objects["31 left foot index"]
                 foot_l = bpy.context.scene.objects["32 right foot index"]
+                r_shoulder = bpy.context.scene.objects["11 left shoulder"]
+                l_shoulder = bpy.context.scene.objects["12 right shoulder"]
+                r_thumb = bpy.context.scene.objects["21 left thumb"]
+                l_thumb = bpy.context.scene.objects["22 right thumb"]
 
                     
                 xl = bpy.data.scenes[0].frame_current
@@ -299,16 +292,24 @@ def run_full(file_path):
                 if l_xl < xl:
                     r_hand_rot_x = r_hand_1.location.x - r_hand_2.location.x
                     r_hand_rot_z = r_hand_1.location.z - r_hand_2.location.z
+                    r_arm_z = r_shoulder.location.z - r_thumb.location.z
                         
                     if r_hand_rot_z == 0:
                         r_hand_rot_z = r_hand_rot_z + 0.0001
                             
                     else:
+                    #if r_arm_z < 0.25:
                         r_hand_rot = (np.arctan([r_hand_rot_x / r_hand_rot_z]))
                         r_hand_rot_final = r_hand_rot - r_hand_rot_initial
-                        r_hand_2.rotation_euler = (0, -r_hand_rot_final, 180)
+                        r_hand_2.rotation_euler = (180, -r_hand_rot_final, -180)
                         r_hand_2.keyframe_insert(data_path="rotation_euler", frame = xl)
                         r_hand_rot_initial = r_hand_rot
+                        #else:
+                         #   r_hand_rot = (np.arctan([r_hand_rot_x / r_hand_rot_z]))
+                          #  r_hand_rot_final = r_hand_rot - r_hand_rot_initial
+                           # r_hand_2.rotation_euler = (-90, r_hand_rot_final, 180)
+                            #r_hand_2.keyframe_insert(data_path="rotation_euler", frame = xl)
+                            #r_hand_rot_initial = r_hand_rot
                         
                     
                     
@@ -316,16 +317,24 @@ def run_full(file_path):
                 if l_xl < xl:
                     l_hand_rot_x = l_hand_1.location.x - l_hand_2.location.x
                     l_hand_rot_z = l_hand_1.location.z - l_hand_2.location.z
+                    l_arm_z = l_shoulder.location.z - l_thumb.location.z
                         
                     if l_hand_rot_z == 0:
                         l_hand_rot_z = l_hand_rot_z + 0.0001
                             
                     else:
+                    #if l_arm_z < 0.25:
                         l_hand_rot = (np.arctan([l_hand_rot_x / l_hand_rot_z]))
                         l_hand_rot_final = l_hand_rot - l_hand_rot_initial
-                        l_hand_2.rotation_euler = (0, -l_hand_rot_final, -180)
+                        l_hand_2.rotation_euler = (180, -l_hand_rot_final, 180)
                         l_hand_2.keyframe_insert(data_path="rotation_euler", frame = xl)
                         l_hand_rot_initial = l_hand_rot
+        #                else:
+         #                   l_hand_rot = (np.arctan([l_hand_rot_x / l_hand_rot_z]))
+          #                  l_hand_rot_final = l_hand_rot - l_hand_rot_initial
+           #                 l_hand_2.rotation_euler = (-90, l_hand_rot_final, 180)
+            #                l_hand_2.keyframe_insert(data_path="rotation_euler", frame = xl)
+             #               l_hand_rot_initial = l_hand_rot
                             
                 if l_xl < xl:
                     hip_rot_z = hip_1.location.x - hip_2.location.x
@@ -684,7 +693,16 @@ def body_setup():
             box.name = body_names[k]
             box.scale = (0.01, 0.01, 0.01)
             box.parent = body
-
+        
+        context = bpy.context
+        scene = context.scene
+        
+        r = scene.objects.get("20 right index")
+        l = scene.objects.get("19 left index")
+        
+        r.rotation_euler = (0, -210, 0)
+        l.rotation_euler = (0, -210, 0)
+        
     body = bpy.context.scene.objects["Body"]
     return body
 
@@ -1346,6 +1364,16 @@ def add_constraints(selected_armature):
     crc_1 = torso_bone_constraint.constraints.new("COPY_ROTATION")
     constraint_cubes_object_1 = scene.objects.get("23 left hip")
     crc_1.target = constraint_cubes_object_1
+    
+    r = selected_armature.pose.bones.get("hand_ik.R")
+    crc_2 = r.constraints.new("COPY_ROTATION")
+    constraint_cubes_object_2 = scene.objects.get("19 left index")
+    crc_2.target = constraint_cubes_object_2
+    
+    l = selected_armature.pose.bones.get("hand_ik.L")
+    crc_3 = l.constraints.new("COPY_ROTATION")
+    constraint_cubes_object_3 = scene.objects.get("20 right index")
+    crc_3.target = constraint_cubes_object_3
         
     
     
