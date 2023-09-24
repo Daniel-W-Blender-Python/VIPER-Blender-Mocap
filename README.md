@@ -51,7 +51,7 @@ Then select the box next to the addon:
 
 The addon should appear in the side panel:
 
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/4478da2b-c628-4a32-a143-e2bb99dae697)
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/07e8d7a8-bd51-49db-b5f2-53e20f924248)
 
 
 
