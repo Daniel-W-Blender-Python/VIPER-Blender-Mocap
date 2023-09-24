@@ -39,8 +39,6 @@ Then, click the "Run Script" button:
 
 Click (Edit >> Preferences >> Add-ons >> Install >> Blender Mocap.py)
 
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/f7d6f36c-0b88-4e1d-a161-558c87f7f595)
-
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/402f7c6c-0338-415b-ad79-09208cda66fa)
 
 Then select the box next to the addon:
