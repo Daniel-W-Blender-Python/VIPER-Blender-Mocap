@@ -29,7 +29,7 @@ Click on the "Scripting" tab:
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/ee35af04-7e91-44cd-9b60-7e21831b6e30)
 
-Navigate to the "Install Dependencies" script from the zip file:
+Navigate to the "Install Dependencies.py" script from the zip file:
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/7356a715-0330-4853-9d1d-e65142ae7566)
 
@@ -41,7 +41,7 @@ Click (Edit >> Preferences >> Add-ons >> Install >> Blender Mocap.py)
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/402f7c6c-0338-415b-ad79-09208cda66fa)
 
-Double-Click "Blender Mocap V3":
+Double-Click "Blender Mocap V3.py":
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/d5083034-4d73-4c1c-9379-0bc2798ca9db)
 
