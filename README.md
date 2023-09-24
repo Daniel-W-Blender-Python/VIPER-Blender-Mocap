@@ -121,7 +121,7 @@ If your computer is crashing while checking the addon box, try importing and run
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/664018bc-86be-46b1-9c04-b13cece1b2df)
 
-If you have getting an error when clicking "Smooth Animation", make sure that the drivers aren't hidden in the scene.
+If you are getting an error when clicking "Smooth Animation", make sure that the drivers aren't hidden in the scene.
 
 If you are getting an error when clicking "Save Animation", or the button simply doesn't work, try showing all the layers of the rig. Then try saving the animation.
 
