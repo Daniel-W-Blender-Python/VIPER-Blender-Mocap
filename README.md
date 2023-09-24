@@ -41,6 +41,8 @@ Click (Edit >> Preferences >> Add-ons >> Install >> Blender Mocap.py)
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/402f7c6c-0338-415b-ad79-09208cda66fa)
 
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/d5083034-4d73-4c1c-9379-0bc2798ca9db)
+
 Then select the box next to the addon:
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/2b85fb17-ac42-451c-b1b1-9f63dc69654f)
