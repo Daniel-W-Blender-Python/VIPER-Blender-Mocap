@@ -25,8 +25,6 @@ In future versions, this addon will hopefully run more on deep learning algorith
 
 First, download the zip file from github, and then extract the python script titled "Blender Mocap (Newest Version)" from the folder. Then, open Blender.
 
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/402f7c6c-0338-415b-ad79-09208cda66fa)
-
 Click on the "Scripting" tab:
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/ee35af04-7e91-44cd-9b60-7e21831b6e30)
@@ -42,6 +40,8 @@ Then, click the "Run Script" button:
 Click (Edit >> Preferences >> Add-ons >> Install >> Blender Mocap.py)
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/f7d6f36c-0b88-4e1d-a161-558c87f7f595)
+
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/402f7c6c-0338-415b-ad79-09208cda66fa)
 
 Then select the box next to the addon:
 
