@@ -27,6 +27,18 @@ First, download the zip file from github, and then extract the python script tit
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/402f7c6c-0338-415b-ad79-09208cda66fa)
 
+Click on the "Scripting" tab:
+
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/ee35af04-7e91-44cd-9b60-7e21831b6e30)
+
+Navigate to the "Install Dependencies" script from the zip file:
+
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/7356a715-0330-4853-9d1d-e65142ae7566)
+
+Then, click the "Run Script" button:
+
+![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/2fbd2085-5228-4b7f-824b-3b57346ffeb4)
+
 Click (Edit >> Preferences >> Add-ons >> Install >> Blender Mocap.py)
 
 ![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/f7d6f36c-0b88-4e1d-a161-558c87f7f595)
