@@ -1013,6 +1013,10 @@ def delete_constraints(target):
             if target.pose.bones[constraint_bones[n]].constraints:
                 target.pose.bones[constraint_bones[n]].constraints.remove(target.pose.bones[constraint_bones[n]].constraints[0])
                 
+    hips = target.pose.bones.get("hips")            
+    hips.location = (0, 0, 0)
+    hips.keyframe_insert(data_path="location", frame=bpy.data.scenes[0].frame_start)            
+    
                 
 def delete_empties():
 
@@ -1045,9 +1049,6 @@ def align_rig(target):
     
     torso = target.pose.bones.get("torso")
     torso.location = (0, 0.05, 0)
-    
-    hips = target.pose.bones.get("hips")
-    hips.location = (0, 0.07, 0)
     
         
 def link_rok(source, target):
@@ -1286,12 +1287,22 @@ def link_rok(source, target):
     crc = l_forearm.constraints.new("COPY_ROTATION")
     crc.target = lf_arm_con
     
+    spine_four = target.pose.bones.get("tweak_spine.004")
+    head = target.pose.bones.get("head")
+    
     r_shoulder.constraints.remove(r_shoulder.constraints[0])
     l_shoulder.constraints.remove(l_shoulder.constraints[0])
+    spine_four.constraints.remove(spine_four.constraints[0])
+    head.constraints.remove(head.constraints[0])
+    
+    target.pose.bones["neck"].constraints["Copy Location"].influence = 0.5
+    
+    hips = target.pose.bones.get("hips")
+    hips.location = (0, 0.07, 0)
+    hips.keyframe_insert(data_path="location", frame=bpy.data.scenes[0].frame_start)
     
     
 def retarget_rok(source, target):
-    
     
     context = bpy.context     
     scene = context.scene
@@ -1527,8 +1538,19 @@ def retarget_rok(source, target):
     crc = l_forearm.constraints.new("COPY_ROTATION")
     crc.target = lf_arm_con
     
+    spine_four = target.pose.bones.get("tweak_spine.004")
+    head = target.pose.bones.get("head")
+    
     r_shoulder.constraints.remove(r_shoulder.constraints[0])
     l_shoulder.constraints.remove(l_shoulder.constraints[0])
+    spine_four.constraints.remove(spine_four.constraints[0])
+    head.constraints.remove(head.constraints[0])
+    
+    target.pose.bones["neck"].constraints["Copy Location"].influence = 0.5
+    
+    hips = target.pose.bones.get("hips")
+    hips.location = (0, 0.07, 0)
+    hips.keyframe_insert(data_path="location", frame=bpy.data.scenes[0].frame_start)
     
     target.select_set(True)
     
