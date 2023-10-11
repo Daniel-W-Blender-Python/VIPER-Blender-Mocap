@@ -1061,6 +1061,7 @@ def link_rok(source, target):
     target = scene.objects.get(mytool.target)
     
     delete_constraints(target)
+    align_rig(target)
     
     empties_col = bpy.data.collections.new("Empties.001")
     bpy.context.scene.collection.children.link(empties_col)
@@ -1312,6 +1313,7 @@ def retarget_rok(source, target):
     target = scene.objects.get(mytool.target)
     
     delete_constraints(target)
+    align_rig(target)
     
     empties_col = bpy.data.collections.new("Empties.001")
     bpy.context.scene.collection.children.link(empties_col)
