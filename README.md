@@ -23,7 +23,7 @@ In future versions, this addon will hopefully run more on deep learning algorith
 
 # How To Install:
 
-First, download the zip file from github, and then extract the python script titled "Blender Mocap (Newest Version)" from the folder. Then, open Blender **With** **Administrator** **Privileges**.
+First, download the zip file from github, and then extract the python script titled "Blender Mocap (Newest Version)" from the folder. Then, open Blender **WITH** **ADMINISTRATOR** **PRIVILEGES**.
 
 Click on the "Scripting" tab:
 
