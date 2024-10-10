@@ -1,5 +1,5 @@
-# VIPER Blender Mocap
-A Blender Addon that uses Mediapipe in Blender to capture a person's movements, and apply them to a character in real time.
+# VIPER: Video and Image-Based Pose Estimation
+A Blender Addon that uses István Sárándi's Metrabs 3D pose estimation model in Blender to capture a person's movements, and apply them to multiple characters.
 
 Here is a demo of what the addon can do:
 
