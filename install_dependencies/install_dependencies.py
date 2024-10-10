@@ -1,6 +1,6 @@
 import os
 import sys
-import subprocesses
+import subprocess
 
 python_exe = os.path.join(sys.prefix, 'bin', 'python.exe')
 py_lib = os.path.join(sys.prefix, 'lib', 'site-packages','pip')
