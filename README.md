@@ -1,4 +1,4 @@
-# Blender-Motion-Capture-Addon
+# VIPER Blender Mocap
 A Blender Addon that uses Mediapipe in Blender to capture a person's movements, and apply them to a character in real time.
 
 Here is a demo of what the addon can do:
