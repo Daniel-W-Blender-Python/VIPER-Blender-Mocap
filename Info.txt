@@ -1,0 +1,1 @@
+This folder will contain the frames of the videos loaded into the VIPER Mocap addon.
