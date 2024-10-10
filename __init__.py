@@ -22,7 +22,6 @@ import cv2
 import numpy as np
 import math
 from mathutils import Quaternion
-from PyQt5.QtWidgets import QApplication, QWidget, QProgressBar, QVBoxLayout
 import sys
 import time
 
@@ -35,7 +34,6 @@ def install_dependencies():
     subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow"])
     subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "jaxlib"])
     subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "jax"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "PyQt5"])
     
     
 def draw_file_opener(self, context):
