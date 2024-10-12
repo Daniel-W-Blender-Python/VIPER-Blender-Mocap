@@ -16,7 +16,9 @@ The Metrabs model takes around two seconds per frame to estimate static poses on
 
 # How To Install:
 
-First, download the zip file from github, and then extract the python script titled "Blender Mocap (Newest Version)" from the folder. Then, open Blender **WITH** **ADMINISTRATOR** **PRIVILEGES**.
+First, download the zip file from github, and then download the metrabs model, and add it to the zip file: https://omnomnom.vision.rwth-aachen.de/data/metrabs/metrabs_mob3l_y4t.zip 
+
+Then, open Blender **WITH** **ADMINISTRATOR** **PRIVILEGES**.
 
 Click on the "Scripting" tab:
 
