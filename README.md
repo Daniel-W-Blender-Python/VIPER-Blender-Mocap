@@ -20,34 +20,7 @@ First, download the zip file from github, and then download the metrabs model, a
 
 Then, open Blender **WITH** **ADMINISTRATOR** **PRIVILEGES**.
 
-Click on the "Scripting" tab:
-
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/ee35af04-7e91-44cd-9b60-7e21831b6e30)
-
-Click "Open", and navigate to the "Install Dependencies.py" script from the zip file:
-
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/7356a715-0330-4853-9d1d-e65142ae7566)
-
-Then, click the "Run Script" button:
-
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/2fbd2085-5228-4b7f-824b-3b57346ffeb4)
-
-Click (Edit >> Preferences >> Add-ons >> Install >> Blender Mocap.py)
-
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/402f7c6c-0338-415b-ad79-09208cda66fa)
-
-Double-Click "Blender Mocap V3.py":
-
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/d5083034-4d73-4c1c-9379-0bc2798ca9db)
-
-Then select the box next to the addon:
-
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/2b85fb17-ac42-451c-b1b1-9f63dc69654f)
-
-The addon should appear in the side panel:
-
-![image](https://github.com/Daniel-W-Blender-Python/Blender-Motion-Capture-Addon/assets/142774885/2331ab57-136c-4112-aa12-fa8304c70c6f)
-
+https://www.loom.com/share/909dcb9579a74c17aeba4d5d7f071a46
 
 
 # How to Use:
