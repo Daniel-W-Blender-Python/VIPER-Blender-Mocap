@@ -3,7 +3,7 @@ A Blender Addon that uses István Sárándi's Metrabs 3D pose estimation model i
 
 Here is a demo of what the addon can do:
 
-https://www.loom.com/share/b89c79e10396484681948b2ccf612ebf
+https://www.loom.com/share/ce14131ef20c4d74ac738ffcb00d0383
 
 The addon extracts 3D joint locations from the image, using the Metrabs model, and marks those locations with empties in the 3D space. The addon then constrains the locations of the hands and feet to the corresponding empties. To calculate rotations of the torso and the root, the addon assumes that the direction of the rig is within 180 degress of the vector orthogonal to the pelvis. To calculate the rotation of the shoulders, the addon assumes that the direction of the shoulders is within 180 degrees of the head vector.
 
