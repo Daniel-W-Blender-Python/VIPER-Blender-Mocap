@@ -1,0 +1,19 @@
+License:
+
+This Blender addon, VIPER-Blender-Mocap, is licensed under the terms of the MIT License (see LICENSE file for details).
+
+Metrabs 3D Pose Estimation Model:
+
+This addon utilizes István Sárándi's Metrabs 3D pose estimation model, which is licensed under the METRABS-LICENSE. A copy of the license is included in this repository (see METRABS-LICENSE file). Please ensure you comply with the terms of the METRABS-LICENSE when using István Sárándi's Metrabs 3D pose estimation model.
+
+Attribution:
+
+You are free to use this addon for personal and commercial purposes. However, attribution to the author, Daniel-W-Blender-Python, is appreciated.
+
+Warranty Disclaimer:
+
+This addon is provided "AS IS" without any warranty or guarantee. The author is not liable for any damages arising from the use of this addon.
+
+Redistribution:
+
+The source code (excluding István Sárándi's Metrabs 3D pose estimation model) can be redistributed under the terms of the MIT License (see LICENSE file).
