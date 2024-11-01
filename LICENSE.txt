@@ -1,0 +1,19 @@
+License:
+
+This Blender addon, VIPER-Blender-Facial-Motion-Capture, is licensed under the terms of the MIT License (see LICENSE file for details).
+
+MediaPipe Face Landmarker:
+
+This addon utilizes MediaPipe Face Landmarker, which is licensed under the Apache-2.0 License. A copy of the license is included in this repository (see APACHE2.0 file). Please ensure you comply with the terms of the Apache-2.0 License when using MediaPipe Face Landmarker.
+
+Attribution:
+
+You are free to use this addon for personal and commercial purposes. However, attribution to the author, Daniel-W-Blender-Python, is appreciated.
+
+Warranty Disclaimer:
+
+This addon is provided "AS IS" without any warranty or guarantee. The author is not liable for any damages arising from the use of this addon.
+
+Redistribution:
+
+The source code (excluding MediaPipe Face Landmarker) can be redistributed under the terms of the MIT License (see LICENSE file).
