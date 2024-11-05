@@ -1,7 +1,7 @@
 bl_info = {
     "name": "VIPER Blender Full Mocap",
     "author": "Daniel W",
-    "version": (0, 1),
+    "version": (0, 2),
     "blender": (4, 0, 0),
     "location": "3D View > Sidebar > VIPER Blender Full Mocap",
     "description": "Full Motion Capture",
