@@ -541,7 +541,7 @@ def extract_motion(file, context):
                 angle_1 = np.arccos(np.dot(pelvis_direction_vector_1, foot_vector_array) / (len_pelvis_direction_vector_1 * len_foot_vector))
                 angle_2 = np.arccos(np.dot(pelvis_direction_vector_2, foot_vector_array) / (len_pelvis_direction_vector_2 * len_foot_vector))
                 
-                if angle_1 < (math.pi / 2):
+                if angle_1 <= (math.pi / 2):
                     dir_vector = pelvis_direction_vector_1
                 if angle_2 < (math.pi / 2):
                     dir_vector = pelvis_direction_vector_2
