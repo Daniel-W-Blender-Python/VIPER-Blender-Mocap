@@ -459,25 +459,37 @@ def extract_motion(file, context):
                     except:
                         joint_location = False
                 if num == 0:
-                    rig = scene.objects.get(mytool.eyedropper1)
-                    rig.location = scene.objects.get("Pose_"+str(num)+"_"+str(6)).location
-                    rig.location.z = rig.location.z - 1.35
-                    rig.keyframe_insert(data_path="location", frame=t)
+                    try:
+                        rig = scene.objects.get(mytool.eyedropper1)
+                        rig.location = scene.objects.get("Pose_"+str(num)+"_"+str(6)).location
+                        rig.location.z = rig.location.z - 1.35
+                        rig.keyframe_insert(data_path="location", frame=t)
+                    except:
+                        rig_location = False
                 if num == 1:
-                    rig = scene.objects.get(mytool.eyedropper2)
-                    rig.location = scene.objects.get("Pose_"+str(num)+"_"+str(6)).location
-                    rig.location.z = rig.location.z - 1.35
-                    rig.keyframe_insert(data_path="location", frame=t)
+                    try:
+                        rig = scene.objects.get(mytool.eyedropper2)
+                        rig.location = scene.objects.get("Pose_"+str(num)+"_"+str(6)).location
+                        rig.location.z = rig.location.z - 1.35
+                        rig.keyframe_insert(data_path="location", frame=t)
+                    except:
+                        rig_location = False
                 if num == 2:
-                    rig = scene.objects.get(mytool.eyedropper3)
-                    rig.location = scene.objects.get("Pose_"+str(num)+"_"+str(6)).location
-                    rig.location.z = rig.location.z - 1.35
-                    rig.keyframe_insert(data_path="location", frame=t)
+                    try:
+                        rig = scene.objects.get(mytool.eyedropper3)
+                        rig.location = scene.objects.get("Pose_"+str(num)+"_"+str(6)).location
+                        rig.location.z = rig.location.z - 1.35
+                        rig.keyframe_insert(data_path="location", frame=t)
+                    except:
+                        rig_location = False
                 if num == 3:
-                    rig = scene.objects.get(mytool.eyedropper4)
-                    rig.location = scene.objects.get("Pose_"+str(num)+"_"+str(6)).location
-                    rig.location.z = rig.location.z - 1.35
-                    rig.keyframe_insert(data_path="location", frame=t)
+                    try:
+                        rig = scene.objects.get(mytool.eyedropper4)
+                        rig.location = scene.objects.get("Pose_"+str(num)+"_"+str(6)).location
+                        rig.location.z = rig.location.z - 1.35
+                        rig.keyframe_insert(data_path="location", frame=t)
+                    except:
+                        rig_location = False
                     
                 num += 1
                 
