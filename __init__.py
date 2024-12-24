@@ -451,10 +451,13 @@ def extract_motion(file, context):
                     
                 for k in range(29):
                     joint = scene.objects.get("Pose_"+str(num)+"_"+str(k))
-                    joint.location.x = avgx + ((((pose3d[k][0]) / 750) - avgx) * scale)
-                    joint.location.y = avgy + ((((pose3d[k][1]) / 750) - avgy) * scale)
-                    joint.location.z = avgz + ((((pose3d[k][2]) / 750) - avgz) * scale)
-                    joint.keyframe_insert(data_path="location", frame=t)
+                    try:
+                        joint.location.x = avgx + ((((pose3d[k][0]) / 750) - avgx) * scale)
+                        joint.location.y = avgy + ((((pose3d[k][1]) / 750) - avgy) * scale)
+                        joint.location.z = avgz + ((((pose3d[k][2]) / 750) - avgz) * scale)
+                        joint.keyframe_insert(data_path="location", frame=t)
+                    except:
+                        joint_location = False
                 if num == 0:
                     rig = scene.objects.get(mytool.eyedropper1)
                     rig.location = scene.objects.get("Pose_"+str(num)+"_"+str(6)).location
