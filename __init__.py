@@ -713,9 +713,7 @@ class Settings(PropertyGroup):
     file_path = bpy.props.StringProperty()
     
     file_name : bpy.props.StringProperty(name = "File Path")
-    
-    body_tracking = bpy.props.BoolProperty(default=True)
-    
+
     num_people : bpy.props.IntProperty(name = "Poses", default = 1, min = 1, max = 4)
     
     smooth_val : bpy.props.FloatProperty(name = "Smooth Value", min = 0, max = 10)
@@ -898,10 +896,6 @@ class BlenderMocapPanel(bpy.types.Panel):
         row = layout.row()
         row.operator(InstallDependencies.bl_idname, text="Install Dependencies", icon="IMPORT")
 
-        row = layout.row()
-        label = "Body" if settings.body_tracking else "Body, Hands and Face"
-        row.prop(settings, 'body_tracking', text=label, toggle=True)
-        
         context = bpy.context     
         scene = context.scene
         mytool = scene.settings
